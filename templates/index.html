@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/styles.css">
+    <script type = "text/javascript">
+            function displayDate(){
+            var data = new Date();
+            var dia = data.getDate();
+            var month = data.getMonth();
+            var mesNome = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto",
+            "Setembro", "Outubro", "Novembro", "Dezembro");
+            document.getElementById("mostrarDia").innerHTML = dia + " de " + mesNome[month];
+        };
+
+    </script>
+    <title>Cardapio UFMG</title>
+</head>
+<body onLoad = "displayDate()">
+    <div id = "container">
+        <h1 text-data="Cardápio bandeijão UFMG">Cardápio bandeijão UFMG</h1>
+        <h2 id = mostrarDia></h2>
+        <h2>Escolha o restaurante setorial clicando abaixo:</h2>
+        <div class = "menu">
+            <div class ="ativar"><ion-icon id = "iconPlus" name="add-outline"></ion-icon></div>
+            <li style = "--i:0;">
+                <a href = "ru1.html">RU1</a>
+
+            </li>
+            <li style = "--i:1;">
+                <a href = "ru2.html">RU2</a>
+
+            </li>
+            <li style = "--i:2;">
+                <a href = "ru3.html">RU3</a>
+
+            </li>
+            <li style = "--i:3;">
+                <a href = "ru4.html">RU4</a>
+
+            </li>
+        </div>
+        <div class = "admin">
+            <a href = "admin.html"><ion-icon name="cog-outline" size = "large"></ion-icon></a>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let ativar = document.querySelector('.ativar');
+        let menu = document.querySelector('.menu');
+        ativar.onclick = function() {
+            menu.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>

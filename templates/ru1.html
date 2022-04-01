@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ru1.css') }}">
+    <script type="text/javascript">
+        var db = openDatabase("cardapio_dia.db", '1.0', 'Banco de Dados Cardapio', 2 * 1024 * 1024);
+
+    </script>
+
+
+</head>
+<body onLoad="displayInfo();">
+    <div class = "wrapper">
+        <div class = "title">
+            <h4><span>Restaurante Setorial 1</span>Cardapio de Hoje:</h4>
+
+
+        </div>
+        <div class = "menu">
+            <div class = "single-menu">
+                <img src = "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F44%2F2021%2F08%2F10%2Fwhat-is-protein.jpg" 
+                alt = "Imagem de proteinas">
+                <div class ="menu-content">
+                    <h4>Proteinas do dia <span><ion-icon name="fast-food-outline"></ion-icon></span></h4>
+                    <p id = "proteinContent">{{data[0]}} <br>{{data[1]}}</p>
+                </div>
+
+            </div>
+            
+            <div class = "single-menu">
+                <img src = "https://www.lojabrazil.com.br/blog/wp-content/uploads/2018/04/blog4400.jpg" 
+                alt = "Imagem de guarnição">
+                <div class ="menu-content">
+                    <h4>Guarnição do dia<span><ion-icon name="fast-food-outline"></ion-icon></span></h4>
+                    <p class = "guarnicaoContent">{{data[2]}}</p>
+                </div>
+
+            </div>
+
+            <div class = "single-menu">
+                <img src = "https://radioaratiba.com.br/wp-content/uploads/2015/07/arroz-com-feij%C3%A3o.jpg" 
+                alt = "Imagem de acompanhamentos">
+                <div class ="menu-content">
+                    <h4>Acompanhamentos do dia<span><ion-icon name="fast-food-outline"></ion-icon></span></h4>
+                    <p class = "acompanhamentoContent">{{data[3]}} <br>{{data[4]}}</p>
+                </div>
+
+            </div>
+
+            <div class = "single-menu">
+                <img src = "https://img.itdg.com.br/images/recipes/000/000/233/346244/346244_original.jpg" 
+                alt = "Imagem de saladas">
+                <div class ="menu-content">
+                    <h4>Entradas do dia<span><ion-icon name="fast-food-outline"></ion-icon></span></h4>
+                    <p class = "entradasContent">{{data[5]}} <br>{{data[6]}}</p>
+                </div>
+
+            </div>
+
+            <div class = "single-menu">
+                <img src = "https://images.aws.nestle.recipes/original/889ee11b4885d5b0e7beda360aa8b6e9_gelatina-recheada-receitas-nestle.jpg" 
+                alt = "Imagem de sobremesa">
+                <div class ="menu-content">
+                    <h4>Sobremesa do dia<span><ion-icon name="fast-food-outline"></ion-icon></span></h4>
+                    <p class = "sobremesaContent">{{data[7]}}</p>
+                </div>
+
+            </div>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    </div>
+</body>
+</html>
